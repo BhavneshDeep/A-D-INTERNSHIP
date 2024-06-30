@@ -24,6 +24,7 @@ public class BasicCalculator {
 
     // Main function
     public static void main(String[] args) {
+         // Create a Scanner object for user input
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -34,18 +35,25 @@ public class BasicCalculator {
             System.out.println("4. Division");
             System.out.println("5. Exit");
 
+            // Prompt user for their choice
+
             System.out.print("Enter choice (1/2/3/4/5): ");
             int choice = scanner.nextInt();
+
+             // Check if user wants to exit
 
             if (choice == 5) {
                 System.out.println("Exiting the program.");
                 break;
             }
+            // Prompt user for two numbers
 
             System.out.print("Enter first number: ");
             double num1 = scanner.nextDouble();
             System.out.print("Enter second number: ");
             double num2 = scanner.nextDouble();
+
+             // Perform the chosen operation
 
             switch (choice) {
                 case 1:
@@ -61,10 +69,12 @@ public class BasicCalculator {
                     System.out.println("The result is: " + division(num1, num2));
                     break;
                 default:
+                    // Handle invalid input
                     System.out.println("Invalid input. Please enter a number between 1 and 5.");
                     break;
             }
         }
+         // Close the scanner
 
         scanner.close();
     }
